@@ -1,5 +1,6 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
+import {widthPercentageToDP as wp} from 'react-native-responsive-screen';
 import {colors} from '../../utils';
 import TabItem from './TabItem';
 
@@ -36,15 +37,7 @@ const BottomNavigator = ({state, descriptors, navigation}) => {
           });
         };
 
-        return (
-          <TabItem
-            key={index}
-            title={label}
-            active={isFocused}
-            onPress={onPress}
-            onLongPress={onLongPress}
-          />
-        );
+        return <TabItem key={index} title={label} active={isFocused} onPress={onPress} onLongPress={onLongPress} />;
       })}
     </View>
   );
@@ -59,7 +52,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 25,
     paddingTop: 12,
     paddingBottom: 15,
-    backgroundColor: colors.white,
+    backgroundColor: colors.red,
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
